@@ -217,7 +217,7 @@ function roots{T}(p::Poly{T})
         companion[i+1,i] = 1;
     end
     companion[1,end] = -p[1] / a0
-    D,V = eig(companion)
+    D = EG.eigvals!(EG.schurfact!(EG.hessfact!(companion)))
     r = zeros(eltype(D),length(p)-1)
     r[1:n] = 1./D
     return r

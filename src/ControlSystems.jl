@@ -73,8 +73,11 @@ export  LTISystem,
         numpoly,
         denpoly
 
-using Plots, LaTeXStrings, Requires, OrdinaryDiffEq, IterTools
+using Plots, LaTeXStrings, Requires, OrdinaryDiffEq, IterTools, LinearAlgebra
 import Base: +, -, *, /, (./), (==), (.+), (.-), (.*), (!=), isapprox, convert, promote_op
+
+const EG = LinearAlgebra.EigenGeneral
+
 
 include("types/lti.jl")
 include("types/transferfunction.jl")
